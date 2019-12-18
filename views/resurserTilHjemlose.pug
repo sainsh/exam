@@ -1,0 +1,67 @@
+extends layout
+
+block content
+  h1.title= title
+
+  table.resurser
+    tr
+        th By
+        th Kategori
+        th Navn
+        th Beskrivelse
+        th Adresse
+        th Telefon
+        th Åbningstider
+        th Website
+    each row in rows
+        tr
+            td=row.by
+            td=row.kategori
+            td=row.navn
+            td=row.beskrivelse
+            td=row.adresse
+            td=row.telefon
+            td=row.åbningstider
+            td=row.website
+
+  br
+  br
+  h2.title API
+  table
+    tr
+        th request
+        th path
+        th result
+        th body
+    tr
+        td GET
+        td /resurser
+        td giver en liste over resurser i JSON format
+        td intet skal sendes med
+    tr
+        td GET
+        td /resurser/:id
+        td giver en enkelt resurser i JSON format
+        td intet skal sendes med
+    tr
+        td POST
+        td /resurser
+        td skriver en ny resurse til databasen
+        td JSON objekt med keys som vist oven over
+    tr
+        td PUT
+        td /resurser/:id
+        td opdaterer den valgte resurse med ny info
+        td JSON objekt med keys som vist oven over
+    tr
+        td DELETE
+        td /resurser/:id
+        td sletter den valgte resurse
+        td intet skal sendes med
+  p i html mappen ligger html filer som besvarer spørgsmål 3
+  p i public/stylesheets ligger style.css som svar på spørgsml 4
+  p i model/json ligger resurser.json og script.js ligger i public/javascripts/ som svar på spørgsmål 5
+  p spørgsmål 6 er besvaret med denne side og index.js sammen med express
+  p spørgsmål 7 er besvaret i resurse-api.js og users.js
+  p spørgsmål 8 er besvaret i public/javascripts/publicRestrooms.js og brugt på routes toilets.js
+  p spørgsmål 9 er besvaret i model/db.js, views/indtastning.pug og i model/sql-files/

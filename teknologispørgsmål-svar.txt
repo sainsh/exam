@@ -1,0 +1,72 @@
+1: personfølsomme data: højde, vægt, livvidde, sko størrelse,
+cpr nummer, fagforeningsmedlemskab og seksuelle præferencer. 
+navn, adresse, post nr + by og telefon nummer er almindelige 
+personoplyninger
+
+For at indhente og bruge disse data skal Mefi have den enkelte 
+til at underskrive en samtykkeerklæring.
+
+Mefi må gerne indsamle data anonymt, så længe det ikke er muligt
+at identificerer en person ud fra dataen
+
+
+2:
+angreb:
+SQL-injection: en database kan angribes med sql-injection hvis en 
+bruger har adgang til at skrive til databasen, fx i en html form,
+hvor de skal indtaste noget data. Hvis man i dette indtastningsfelt
+kan skrive special-tegn uden at der bliver gjort noget ved hvad der
+bliver indtastet. Hvis man skriver en bestemt række af tegn, fx:
+noget"; 
+Så kan man afslutte den forspørgsel og starte sin egen, fx:
+noget"; SELECT * FROM users;
+Dette kunne give alle bruger navne, deres emails og måske deres
+kodeord. Dette vil være på en sql database
+
+Brute force: hvis en side/app har et login kan man bruge Brute
+force til at tjekke en kombination af brugernavne og kodeord, 
+en efter en. Her kan man bruge forskellige metoder til at gå igennem
+forsøg, fx alfabetisk hvor man starter fra en ende af alfabetet, 
+dog vil denne metode ikke give resultat inden for rimelig tid.
+Man kunne i stedet bruge en af de mange lister af brugernavne og
+kodeord som folk har lagt på nettet.
+
+Man-in-the-middle: denne metode går ud på at opsnappe en forbindelse 
+mellem en bruger og databasen, dette kan man fx gøre ved at udgive 
+sig for at være en router, så alt data på et netværk går igennem
+ens computer inden de bliver sendt ud på internettet, 
+Dette gør at man kan få fat på brugernavn og kodeord på dem som
+logger på systemet.
+
+Falsk side/dns spoofing: med denne metode laver man en hjemmeside
+som ligner en anden på en prik og har sat ens dns-addresse som den
+samme som siden man immiterer, for at få folk som vil ind på den 
+rigtige side til at komme ind på den immiterede.
+På siden vil der ofte være en besked om at man er blevet logget
+ud, fx ved ens session er udløbet eller at der opstod en fejl.
+Herefter vil folk så forsøge at logge ind igen og de vil blive 
+sendt videre til den rigtige side. Dette giver en deres brugernavn 
+og kodeord.
+
+forholdsmidler:
+
+SQL-injection: 
+nemmeste løsning: sørg for at brugeren ikke kan indtaste
+noget som sendes til databasen. Dette gør det dog svært
+for brugeren at bruge siden
+En anden løsning ville være at sørge for at alle special tegn
+blevet lavet om til fx unicode inden det bliver sendt til databasen.
+En tredje løsning ville være at bruge en ORM(obejct relational mapping)
+Dette vil omskrive alt til objecter som sendes til databasen, hvilket
+gør at man ikke skal tænke på special tegn. Prepared statements kunne
+give samme løsning.
+
+Login info: 
+brugernavne kan opbevares i databasen som plaintext, men kan beskyttes
+ved hashing, måske efter at have tilføjet et "salt"(en streng af random
+tegn, som er forudbestemt). 
+kodeord/password skal som minimum være hashet, og det vil være bedst
+hvis et "salt" er tilføjet. Dette gøres inden brugernavn og password
+sendes til database, så databasen aldrig kender det rigtige password.
+Dette er også hvorfor en "god" side ikke giver dig dit password, når
+du klikker på "forgot password" 

@@ -1,0 +1,52 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.title{
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  font-style: italic;
+  color: blue;
+  border-bottom: 2px solid black;
+
+}
+
+.resurse-form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+input{
+  margin-bottom: 10px;
+}
+
+.table{
+  display: flex;
+  
+}
+html, body {
+  width: 100%;
+}
+table {
+  margin: 0 auto;
+}
+
+.resurser{
+  border: 2px solid black;
+  text-align: center;
+}
+
+th{
+  border-bottom: 1px solid black;
+}
+td{
+  border-bottom: 1px solid black;
+}

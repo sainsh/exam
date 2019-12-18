@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1.title= title
+  
+  form(class="resurse-form" method="POST" action="/api/resurser")
+    label( for="by") By: 
+    input( id="by" type="text" name="by")
+    label( for="kategori") Kategori:
+    input( id="kategori" type="text" name="kategori")
+    label(for="navn") Navn
+    input( id="navn" type="text" name="navn")
+    label( for="beskrivelse") Beskrivelse:
+    input( id="beskrivelse" type="text" name="beskrivelse")
+    label( for="adresse") Adresse:
+    input( id="adresse" type="text" name="adresse")
+    label( for="telefon") Telefon:
+    input( id="telefon" type="tel" name="telefon")
+    label( for="åbningstider") Åbningstider:
+    input( id="åbningstider" type="text" name="åbningstider")
+    label( for="website") Website:
+    input( id="website" type="url" name="website")
+    input( type="submit" value="indsend")
+        

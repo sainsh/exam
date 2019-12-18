@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <title>Indtastning</title>
+</head>
+<body>
+    <h1 class="title">Indtastning</h1>
+    <div>
+        <form class="resurse-form" method="POST" action="api/resurse">
+            <label for="by"> By:</label>
+            <input id="by" type="text" name="by">
+            <label for="kategori"> Kategori:</label>
+            <input id="kategori" type="text" name="kategori">
+            <label for="navn"> Navn:</label>
+            <input id="navn" type="text" name="navn">
+            <label for="beskrivelse"> Beskrivelse:</label>
+            <input id="beskrivelse" type="text" name="beskrivelse">
+            <label for="adresse"> Adresse:</label>
+            <input id="adresse" type="text" name="adresse">
+            <label for="telefon"> Telefon:</label>
+            <input id="telefon" type="tel" name="telefon">
+            <label for="åbningstider"> Åbningstider:</label>
+            <input id="åbningstider" type="text" name="åbningstider">
+            <label for="website"> Website:</label>
+            <input id="website" type="url" name="website">
+            <input type="submit" value="indsend">
+        </form>
+
+    </div>
+</body>
+</html>
